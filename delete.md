@@ -2,6 +2,8 @@
 
 Your next task will be to add a new feature to the guestbook that allows administrators to delete messages.
 
+Later, you'll extend this to also allow non-admin users to delete their own messages.
+
 # Logging in as an administrator
 
 To log in as an admin, first log out (if you are logged in) then log in again. Check the "Sign in as Administrator" box.
@@ -12,7 +14,7 @@ Below each message in the guestbook there should be a delete link that is only d
 
 In your index.html file, add this inside the for-loop below the greeting content to create the link:
 ```
-<a href="/delete?guestbook_name={{ guestbook_name }}&greeting_id={{ greeting.key.id() }}">Delete</a>
+<div><a href="/delete?guestbook_name={{ guestbook_name }}&greeting_id={{ greeting.key.id() }}">Delete</a></div>
 ```
 
 Now, make it so it only displays when the user is an admin. This requires two steps:
@@ -78,3 +80,14 @@ The ID you'll pass to this will be the greeting_id.
 3. If the greeting is found (if it's not None) then delete it.
 See this documentation for notes on how to delete entities from the datastore:
 https://cloud.google.com/appengine/docs/python/ndb/entities#deleting_entities
+
+# Allowing non-admin users to delete their messages
+
+Now go back and add a feature that allows non-admin users to delete messages that they posted, but noone else's.
+
+Remember that you can make this comparison to determine authorship:
+
+```
+if users.get_current_user().user_id() == greeting.author.identity:
+  # This user wrote the greeting.
+```
