@@ -40,7 +40,7 @@ class Delete(webapp2.RequestHandler):
                                           DEFAULT_GUESTBOOK_NAME)
         greeting_id = int(self.request.get('greeting_id'))
         
-        # Fill in code here to delete.
+        # Fill in code here to do the deletion.
         
         query_params = {'guestbook_name': guestbook_name}
         self.redirect('/?' + urllib.urlencode(query_params))
