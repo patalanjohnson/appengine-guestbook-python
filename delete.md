@@ -83,7 +83,7 @@ https://cloud.google.com/appengine/docs/python/ndb/entities#deleting_entities
 
 # Allowing non-admin users to delete their messages
 
-Now go back and add a feature that allows non-admin users to delete messages that they posted, but noone else's.
+Now go back and add a feature that allows non-admin users to delete messages that they posted, but no one else's.
 
 Remember that you can make this comparison to determine authorship:
 
