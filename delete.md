@@ -79,7 +79,7 @@ The ID you'll pass to this will be the greeting_id.
 
 3. If the greeting is found (if it's not None) then delete it.
 See this documentation for notes on how to delete entities from the datastore:
-https://cloud.google.com/appengine/docs/python/ndb/entities#deleting_entities
+[deleting entites](https://cloud.google.com/appengine/docs/python/ndb/entities#deleting_entities).
 
 # Allowing non-admin users to delete their messages
 
