@@ -10,7 +10,7 @@ To log in as an admin, first log out (if you are logged in) then log in again. C
 
 # Adding delete links
 
-Below each message in the guestbook there should be a delete link that is only displayed if the user is an admin.
+Below each message in the guestbook you should add a delete link that is only displayed if the user is an admin.
 
 In your index.html file, add this inside the for-loop below the greeting content to create the link:
 ```
@@ -19,7 +19,7 @@ In your index.html file, add this inside the for-loop below the greeting content
 
 Now, make it so it only displays when the user is an admin. This requires two steps:
 
-1. In guestbook.py (or main.py if you named it that), pass in a new parameter to the template to indicate if the user is an admin.
+1. In guestbook.py (or main.py if you named it that, or helloworld.py if you're lazy and didn't change it from the first exercise...), pass in a new parameter to the template to indicate if the user is an admin.
 You'll need to add a new entry to the "template_values" dictionary in your MainPage class with a boolean value (true for admin, false if not).
 You can check if the user is an admin with this code in Python:
 
@@ -27,9 +27,9 @@ You can check if the user is an admin with this code in Python:
 
 2. In index.html, add an if-statement to the template around the link.
 The if-statement should evaluate to true if the user is an admin.
-See the other if-statement for reference on syntax.
+See the other if-statement in index.html for reference on syntax. You'll need to use {% and %}.
 
-# Adding delete handler
+# Adding the delete handler
 
 Now you'll write the code to actually handle deleting the message when the admin user clicks the link.
 
